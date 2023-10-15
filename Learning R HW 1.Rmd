@@ -1,0 +1,31 @@
+---
+title: "Learning Excel"
+author: "Shevon Pottinger"
+date: "2023-10-15"
+output: html_document
+---
+
+```{r}
+library(readxl)
+Typical_Employee_Survey_Data_3 <- read_excel("/Users/shevonpottinger/Downloads/Typical_Employee_Survey_Data-3.xlsx")
+names(Typical_Employee_Survey_Data_3)<- c("Age","Gender","Job Satisfaction","Most important job characteristics","Years employed","likeliness of Promotion","Making decisions that affect work","Participate in budgetary decisions","Proud level of working for organization","Likeliness of turning down a job offer","Relationship between coworkers")
+summary(Typical_Employee_Survey_Data_3$Age)
+summary(Typical_Employee_Survey_Data_3$`Years employed`)
+boxplot(Typical_Employee_Survey_Data_3$Age)
+boxplot(Typical_Employee_Survey_Data_3$`Years employed`)
+ Typical_Employee_Survey_Data_3$Gender <- as.factor(Typical_Employee_Survey_Data_3$Gender)
+Typical_Employee_Survey_Data_3$`Job Satisfaction` <- as.factor(Typical_Employee_Survey_Data_3$`Job Satisfaction`)
+Typical_Employee_Survey_Data_3$`Relationship between coworkers`<- as.factor(Typical_Employee_Survey_Data_3$`Relationship between coworkers`)
+hist(Typical_Employee_Survey_Data_3$Age)
+boxplot(Typical_Employee_Survey_Data_3$Gender)
+ hist(Typical_Employee_Survey_Data_3$`Years employed`)
+boxplot(Typical_Employee_Survey_Data_3$`Relationship between coworkers`)
+boxplot(Typical_Employee_Survey_Data_3$`Likeliness of turning down a job offer`)
+boxplot(Typical_Employee_Survey_Data_3$`Proud level of working for organization`)
+ plot(x=Typical_Employee_Survey_Data_3$Age, y=Typical_Employee_Survey_Data_3$`Years employed`)
+plot(x=Typical_Employee_Survey_Data_3$Age, y=Typical_Employee_Survey_Data_3$`Likeliness of turning down a job offer`)
+plot(x=Typical_Employee_Survey_Data_3$`Years employed`, y=Typical_Employee_Survey_Data_3$`Relationship between coworkers`)
+
+
+```
+
